@@ -1,6 +1,12 @@
 <?php
 
+use App\Http\Controllers\auth\LoginController;
+use App\Http\Controllers\auth\LogoutController;
+use App\Http\Controllers\auth\ProductController;
+use App\Http\Controllers\auth\RegisterController;
+use App\Http\Controllers\auth\UserpageController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +29,22 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
+  
+Route::get('/register', [RegisterController::class, 'index'])->name('register');
+Route::post('/register', [RegisterController::class, 'store']);
+
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'store']);
+
+Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
+
+Route::get('/userpage', [UserpageController::class, 'index'])->name('userpage');
+Route::post('/userpage', [UserpageController::class, 'store']);
+
+Route::get('/product/{product:id}', [ProductController::class, 'show']);
+Route::post('/product', [ProductController::class, 'store']);
+
+// Route::get('/recepttoevoegen', [ReceptController::class, 'index'])->name('receptToevoegen')->middleware('auth');
+// Route::post('/recepttoevoegen', [ReceptController::class, 'store']);
