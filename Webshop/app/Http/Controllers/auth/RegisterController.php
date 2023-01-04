@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 
-class registreerController extends Controller
+class registerController extends Controller
 {
     public function index(){
-        return view('auth.registreren');
+        return view('auth.register');
     }
 
     public function store(Request $request){
