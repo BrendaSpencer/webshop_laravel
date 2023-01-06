@@ -1,9 +1,6 @@
-@extends('layout.header')
+<x-header>
 
-
-
-
-@section('content')
+    <x-nav/>
 <div class="flex justify-center">  
    
     <div class="w-4/12 bg-gray-200/50  p-6 rounded-lg ">
@@ -90,4 +87,4 @@
         
     </div>
 </div>
-@endsection
+</x-header>

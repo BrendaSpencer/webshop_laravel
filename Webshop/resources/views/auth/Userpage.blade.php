@@ -1,6 +1,11 @@
-@extends('layout.header')
+<x-header>
+
+    <x-nav/>
+    
 
 
 
 
-@section('content')
+
+
+</x-header>
