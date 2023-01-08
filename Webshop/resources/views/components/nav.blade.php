@@ -1,6 +1,6 @@
 <nav class="relative px-4 py-4 flex justify-between items-center bg-white">
     <a class="p-2 opacity-60 rounded hover:bg-gray-200/75 " href="{{ route('home') }}">
-        <img src="images/logo.png" alt="logo">
+        <img src="../images/logo.png" alt="logo">
     </a>
     @auth
     @endauth
@@ -35,25 +35,14 @@
         <li>
             <a class=" text-gray-400 hover:text-gray-500" href="{{ route('userpage') }}">{{auth()->user()->firstname}}</a>
         </li>
-        <li class="text-gray-300">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
-            </svg>
-        </li>
-
-        <li>
-            <form action="{{ route('logout') }}" method="post" class=" text-gray-400 hover:text-gray-500" >
-                @csrf
-                <button class="p-4  opacity-60 rounded hover:bg-gray-200/75" type="submit">Logout</button>
-            </form>
-        </li>
+   
         <li class="text-gray-300">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
             </svg>
         </li>
         <li>
-        <img class='w-8 text-gray-300' src="images/favorite.svg" alt="favorite"></a>
+        <img class='w-6 text-gray-300' src="images/favorite.svg" alt="favorite"></a>
     </li>
     <li class="text-gray-300">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
@@ -69,6 +58,13 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
         </svg>
     </li>
+    <li>
+        <form action="{{ route('logout') }}" method="post" class=" text-gray-400 hover:text-gray-500" >
+            @csrf
+            <button class="p-4  opacity-60 rounded hover:bg-gray-200/75" type="submit">Logout</button>
+        </form>
+    </li>
+
     </ul>
     @endauth
     @guest

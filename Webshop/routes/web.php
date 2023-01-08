@@ -26,9 +26,7 @@ use App\Http\Controllers\HomeController;
         destroy - delete
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
   

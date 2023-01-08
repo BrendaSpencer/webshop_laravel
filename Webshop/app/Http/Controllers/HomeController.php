@@ -9,7 +9,10 @@ class HomeController extends Controller
 {
     public function index(){
 
-        $products = Product::orderBy('created_at', 'desc')->get();
+        $products = Product::orderBy('created_at', 'desc')
+                            ->filter(request(['tag']))
+                            ->get();
+                     
         return view('home',[
             'products' =>$products
         ]);
